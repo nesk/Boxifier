@@ -22,7 +22,7 @@ And specify the links you want to associate to Boxifier :
         <img src="thumbnail.jpg" alt="Thumbnail">
     </a>
 
-You can also create group of images :
+You can also create groups of images :
 
     <a href="fullsize1.jpg" rel="boxifier[group1]">
         <img src="thumbnail1.jpg" alt="Thumbnail 1">

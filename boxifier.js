@@ -5,11 +5,6 @@ Todo :
 - Support IE7 and above
 - Support links without images
 
-Bugs :
-- Safari just NOT work...
-- Chrome doesn't apply animations on width and height
-- Loading animation doesn't work with Chrome and Opera
-
 */
 
 (function() {
