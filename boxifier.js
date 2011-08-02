@@ -294,7 +294,14 @@ Todo :
             '}'
           ].join(''));
 
-      el.styleSheet ? el.styleSheet.cssText = s.nodeValue : el.innerHTML = '', el.appendChild(s);
+      // el.innerHTML = '' isn't allowed by Safari
+      if(el.styleSheet) {
+        el.styleSheet.cssText = s.nodeValue;
+      } else {
+        var child1 = el.firstChild;
+        child1 && el.removeChild(child1);
+        el.appendChild(s);
+      }
     
     };
 
