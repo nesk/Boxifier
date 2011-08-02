@@ -76,16 +76,16 @@
 .box_left_arrow div, .box_right_arrow div {
   position: absolute;
   margin: -24px 0 0 -33px;
-  border: 24px solid rgba(204,204,204,0.6);
+  border: 24px solid #000;
 }
 
 .box_left_arrow div {
   margin: -24px 0 0 -15px;
-  border-color: transparent rgba(204,204,204,0.6) transparent transparent;
+  border-color: transparent rgba(204,204,204,0.2) transparent transparent;
 }
 
 .box_right_arrow div {
-  border-color: transparent transparent transparent rgba(204,204,204,0.6);
+  border-color: transparent transparent transparent rgba(204,204,204,0.2);
 }
 
 

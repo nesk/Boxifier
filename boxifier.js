@@ -220,19 +220,21 @@ Todo :
           this.currentImg = img;
           img.parentGroup && img.parentGroup.replaceCursorOn(img);
 
-          var maxImgWidth = this.overlay.offsetWidth - 100,
+          var viewerStyle = viewer.currentStyle || getComputedStyle(viewer, null),
+              maxImgWidth = this.overlay.offsetWidth - 100,
               maxImgHeight = this.overlay.offsetHeight - 100,
               imgWidth = img.imgObj.width,
-              imgHeight = img.imgObj.height;
+              imgHeight = img.imgObj.height,
+              viewerWidth, viewerHeight;
 
           // Calculating viewer size
             if(imgWidth > maxImgWidth || imgHeight > maxImgHeight) {
               if(maxImgWidth < maxImgHeight || imgWidth < imgHeight) {
-                var viewerWidth = maxImgWidth,
-                    viewerHeight = imgHeight / (imgWidth / maxImgWidth);
+                viewerWidth = maxImgWidth;
+                viewerHeight = imgHeight / (imgWidth / maxImgWidth);
               } else {
-                var viewerWidth = imgWidth / (imgHeight / maxImgHeight),
-                    viewerHeight = maxImgHeight;
+                viewerWidth = imgWidth / (imgHeight / maxImgHeight);
+                viewerHeight = maxImgHeight;
               }
             } else {
               viewerWidth = imgWidth;
@@ -240,9 +242,13 @@ Todo :
             }
 
           // Applying event
-            this.onTransitionEnd = function() {
-              objRef.changeImg(img);
-            };
+            if(parseInt(viewerStyle.width) != viewerWidth || parseInt(viewerStyle.height) != viewerHeight) {
+              this.onTransitionEnd = function() {
+                objRef.changeImg(img);
+              };
+            } else {
+              this.changeImg(img);
+            }
 
           // Applying size
             viewerHeight && this.alterSize(
