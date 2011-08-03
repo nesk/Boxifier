@@ -6,7 +6,7 @@ A lightweight HTML5 Lightbox using CSS3 animations and supporting old web browse
 
 The project _is currently in development_ ! The goal is to obtain a JS file smaller than 6Ko (and less if possible).
 
-Actually, the main functions are finished, but the _some parts of the script are bugged so please be careful_ if you want to use Boxifier! Also, remember one thing : this project is currently incompatible with IE (all versions).
+Actually, the main functions are finished, but some parts of the script are bugged so please _be careful_ if you want to use Boxifier! Also, remember one thing : this project is currently incompatible with IE (all versions).
 
 ## Installation and usage
 

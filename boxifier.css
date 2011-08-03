@@ -14,7 +14,7 @@
   General
 */
 
-.box_overlay, .boxifier img, .box_viewer, /*.box_left_arrow div, .box_right_arrow div,*/ .box_title {
+.box_overlay, .boxifier img, .box_viewer, .box_title {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;

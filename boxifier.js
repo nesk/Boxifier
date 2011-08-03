@@ -33,6 +33,17 @@ Todo :
       }
 
     }
+
+    function getScroll() {
+      
+      if(typeof window.pageYOffset != 'undefined') {
+        return [window.pageYOffset, window.pageXOffset];
+      } else {
+        var doc = document.documentElement;
+        return [doc.scrollTop, doc.scrollLeft];
+      }
+
+    }
   
   
   /*** Viewer object ***/
@@ -60,7 +71,7 @@ Todo :
       
       var objRef = this;
       
-      // HTML
+      // HTML initialization
         this.boxifier = document.createElement('div');
         this.boxifier.className = 'boxifier';
         this.boxifier.innerHTML = '<div class="box_overlay"></div><div class="box_viewer"><div class="box_left_arrow"><div></div></div><div class="box_right_arrow"><div></div></div><div class="box_title"></div></div>';
@@ -76,7 +87,7 @@ Todo :
 
         this.loading = new Loading(this.viewer);
       
-      // Core
+      // Arguments analysis
         this.currentImg = {};
         this.onTransitionEnd = function(){};
       
@@ -167,6 +178,7 @@ Todo :
       var viewer = this.viewer,
           imgs = viewer.getElementsByTagName('img');
 
+      // Remove all imgs in the viewer
       for(var i = 0, img ; img = imgs[i++] ;) {
         viewer.removeChild(img);
       }
@@ -254,9 +266,11 @@ Todo :
             }
 
           // Applying size
+            var scroll = getScroll();
+
             viewerHeight && this.alterSize(
-              (this.overlay.offsetHeight - viewerHeight + 2) / 2,
-              (this.overlay.offsetWidth - viewerWidth + 2) / 2,
+              scroll[0] + (this.overlay.offsetHeight - viewerHeight + 2) / 2,
+              scroll[1] + (this.overlay.offsetWidth - viewerWidth + 2) / 2,
               viewerWidth,
               viewerHeight
             );
