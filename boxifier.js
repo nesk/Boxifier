@@ -241,8 +241,11 @@ Todo :
               viewerHeight = imgHeight;
             }
 
+            viewerWidth = Math.floor(viewerWidth);
+            viewerHeight = Math.floor(viewerHeight);
+
           // Applying event
-            if(parseInt(viewerStyle.width) != viewerWidth || parseInt(viewerStyle.height) != viewerHeight) {
+            if(Math.floor(parseInt(viewerStyle.width)) != viewerWidth || Math.floor(parseInt(viewerStyle.height)) != viewerHeight) {
               this.onTransitionEnd = function() {
                 objRef.changeImg(img);
               };
@@ -294,10 +297,9 @@ Todo :
             '}'
           ].join(''));
 
-      // el.innerHTML = '' isn't allowed by Safari
-      if(el.styleSheet) {
+      if(el.styleSheet) { // IE
         el.styleSheet.cssText = s.nodeValue;
-      } else {
+      } else { // Other browsers
         var child1 = el.firstChild;
         child1 && el.removeChild(child1);
         el.appendChild(s);
@@ -556,7 +558,7 @@ Todo :
   
   /*** Initialization ***/
   
-    addEvent(window, 'load', function() {
+    addEvent(document.body, 'load', function() {
       
       var imgs = [],
           groups = [],
