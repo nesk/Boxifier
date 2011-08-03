@@ -558,7 +558,7 @@ Todo :
   
   /*** Initialization ***/
   
-    addEvent(document.body, 'load', function() {
+    addEvent(window, 'load', function() {
       
       var imgs = [],
           groups = [],
