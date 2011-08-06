@@ -11,8 +11,7 @@ Todo :
 
   /*** Misc ***/
   
-    // See this page for more informations on the one line code below : https://gist.github.com/1031421
-    var transitionsSupported = (function(a,b){a=document.body.style;b='ransition';return't'+b in a||'webkitT'+b in a||'MozT'+b in a||'OT'+b in a})();
+    var transitionsSupported;
     
     function addEvent(el, type, func) {
     
@@ -213,7 +212,7 @@ Todo :
         this.loading.style.display = img.loaded ? 'none' : 'block';
 
         if(imgsLen) { // Step 1 : Hide the previous image.
-          
+
           oldImg = imgs[imgs.length - 1];
           oldImg.style.opacity = 0;
 
@@ -574,6 +573,9 @@ Todo :
   
     addEvent(window, 'load', function() {
       
+      // See this page for more informations on the one line code below : https://gist.github.com/1031421
+      transitionsSupported = (function(a,b){a=document.body.style;b='ransition';return't'+b in a||'webkitT'+b in a||'MozT'+b in a||'OT'+b in a})();
+
       var imgs = [],
           groups = [],
           links = document.getElementsByTagName('a');
