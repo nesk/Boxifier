@@ -1,12 +1,3 @@
-/*
-
-Todo :
-- Include the scroll in the position of the viewer element
-- Support IE7 and above
-- Support links without images
-
-*/
-
 (function() {
 
   /*** Misc ***/
@@ -50,7 +41,7 @@ Todo :
   /*
   
     Constructor :
-      Viewer([Group grp1, ImageB img1, Group grp2, ImageB img2, ...])
+      Viewer([Group grp1 || ImageB img1, Group grp2 || ImageB img2, ...])
     
     Public attributes :
       displayed
@@ -453,6 +444,7 @@ Todo :
       
       // Initialization
         this.id = this.getID();
+        this.linkEL = linkEL;
         this.imgEL = linkEL.getElementsByTagName('img')[0];
         this.imgObj = new Image();
         this.src = linkEL.href;
@@ -481,23 +473,22 @@ Todo :
     };
 
     i.getThumbDetails = function() {
-      
-      var imgEL = this.imgEL,
-          pos = this.getThumbnailPos();
+    
+      var el = this.imgEL || this.linkEL,
+          pos = this.getThumbnailPos(el);
       
       return {
         top: pos[0],
         left: pos[1],
-        width: imgEL.offsetWidth,
-        height: imgEL.offsetHeight
+        width: el.offsetWidth,
+        height: el.offsetHeight
       };
     
     };
 
-    i.getThumbnailPos = function() {
+    i.getThumbnailPos = function(el) {
     
-      var el = this.imgEL,
-          top = 0, left = 0;
+      var top = 0, left = 0;
       
       do {
         top += el.offsetTop;
