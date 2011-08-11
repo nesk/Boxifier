@@ -16,10 +16,14 @@
 
     function addTransitionEvent(el, func) {
       
-      var engines = ['webkitTransitionEnd', 'OTransitionEnd', 'transitionend'];
+      if(transitionsSupported) {
+        var engines = ['webkitTransitionEnd', 'OTransitionEnd', 'transitionend'];
 
-      for(var i = 0, engine ; engine = engines[i++] ;) {
-        el.addEventListener(engine, func, false);
+        for(var i = 0, engine ; engine = engines[i++] ;) {
+          el.addEventListener(engine, func, false);
+        }
+      } else {
+        func();
       }
 
     }
@@ -99,6 +103,7 @@
         });
         
         addEvent(window, 'keydown', function(e) {
+          e = e || window.event;
           e.keyCode == 37 && objRef.previous();
           e.keyCode == 39 && objRef.next();
           e.keyCode == 27 && objRef.close();
@@ -251,6 +256,7 @@
               this.onTransitionEnd = function() {
                 objRef.changeImg(img);
               };
+              transitionsSupported || this.onTransitionEnd();
             } else {
               this.changeImg(img);
             }
@@ -459,7 +465,10 @@
         });
         
         addEvent(linkEL, 'click', function(e) {
-          e.preventDefault();
+          e = e || window.event;
+          e.returnValue = false;
+          e.preventDefault && e.preventDefault();
+
           (objRef.parentViewer || objRef.parentGroup.parentViewer).open(objRef);
         });
     
