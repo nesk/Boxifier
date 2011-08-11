@@ -12,23 +12,29 @@ Actually, the main functions are finished, but some parts of the script are bugg
 
 To use this project on a web page, just add those two lines in your `<head>` tag :
 
-    <style>@import url('boxifier.css');</style>
-    <script src="boxifier.js"></script>
+```html
+<style>@import url('boxifier.css');</style>
+<script src="boxifier.js"></script>
+```
 
 And specify the links you want to associate to Boxifier :
 
-    <a href="fullsize.jpg" rel="boxifier">
-        <img src="thumbnail.jpg" alt="Thumbnail">
-    </a>
+```html
+<a href="fullsize.jpg" rel="boxifier">
+    <img src="thumbnail.jpg" alt="Thumbnail">
+</a>
+```
 
 You can also create groups of images :
 
-    <a href="fullsize1.jpg" rel="boxifier[group1]">
-        <img src="thumbnail1.jpg" alt="Thumbnail 1">
-    </a>
+```html
+<a href="fullsize1.jpg" rel="boxifier[group1]">
+    <img src="thumbnail1.jpg" alt="Thumbnail 1">
+</a>
 
-    <a href="fullsize2.jpg" rel="boxifier[group2]">
-        <img src="thumbnail2.jpg" alt="Thumbnail 2">
-    </a>
+<a href="fullsize2.jpg" rel="boxifier[group2]">
+    <img src="thumbnail2.jpg" alt="Thumbnail 2">
+</a>
+```
 
 If you add a title attribute to a link, it will be display with the image.
