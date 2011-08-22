@@ -6,18 +6,21 @@ A lightweight HTML5 Lightbox using CSS3 animations and supporting old web browse
 
 The project _is currently in development_ ! The goal is to obtain a JS file smaller than 6Ko (and less if possible).
 
-Actually, the main functions are finished, but some parts of the script are bugged so please _be careful_ if you want to use Boxifier! Also, remember one thing : this project is currently incompatible with IE (all versions).
+Actually, the main functions are finished, but some parts of the script are bugged so please _be careful_ if you want to use Boxifier! Remember to check this page (https://github.com/Nesk/Boxifier/issues) to know what are the current issues of this project.
 
 ## Installation and usage
 
-To use this project on a web page, just add those two lines in your `<head>` tag :
+To use this project on a web page, just add those five lines in your `<head>` tag :
 
 ```html
+<!--[if lt IE 9]>
+  <style>@import url('boxifier_ie.css');</style>
+<![endif]-->
 <style>@import url('boxifier.css');</style>
 <script src="boxifier.js"></script>
 ```
 
-And specify the links you want to associate to Boxifier :
+And specify the links you want to associate to Boxifier (Lightbox2 syntax is also supported) :
 
 ```html
 <a href="fullsize.jpg" rel="boxifier">
