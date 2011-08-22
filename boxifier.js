@@ -536,29 +536,20 @@
 
       var el = document.createElement('div');
       el.className = 'box_load';
+      el.innerHTML = '<div></div><div></div><div></div><div></div><div></div>';
       parent.appendChild(el);
 
       setInterval((function() {
 
-        var state = 3,
-            states = [
-              [1, 'Left', 'Top'],
-              [2, 'Top', 'Right'],
-              [3, 'Right', 'Bottom'],
-              [0, 'Bottom', 'Left']
-            ];
+        var state = 4;
 
         return function() {
 
-          el.className = 'box_load';
-
-          state = states[state][0];
-          el.style['border'+ states[state][1] +'Color'] = 'rgba(204,204,204,0.2)';
-          el.style['border'+ states[state][2] +'Color'] = 'rgba(204,204,204,0.6)';
-
-          setTimeout(function() {
-            el.className = 'box_load box_anim box_rotate';
-          }, 20);
+          var previousState = state;
+          state = state >= 4 ? 0 : state+1;
+          
+          el.childNodes[previousState].className = '';
+          el.childNodes[state].className = 'highlight';
 
         };
 
