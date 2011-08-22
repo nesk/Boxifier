@@ -2,6 +2,9 @@
 
   /*** Misc ***/
   
+    // See this page (https://gist.github.com/1034425) for the one line code below, thx to atk :
+    Array.prototype.indexOf=[].indexOf||function(a,b,c,r){for(b=this,c=b.length,r=-1;~c;r=b[--c]===a?c:r);return r};
+
     var transitionsSupported;
     
     function addEvent(el, type, func) {
