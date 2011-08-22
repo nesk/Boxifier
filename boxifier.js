@@ -102,7 +102,7 @@
           objRef.next();
         });
         
-        addEvent(window, 'keydown', function(e) {
+        addEvent(document.body, 'keyup', function(e) {
           e = e || window.event;
           e.keyCode == 37 && objRef.previous();
           e.keyCode == 39 && objRef.next();
