@@ -539,7 +539,7 @@
 
       var el = document.createElement('div');
       el.className = 'box_load';
-      el.innerHTML = '<div></div><div></div><div></div><div></div><div></div>';
+      el.innerHTML = '<span></span><span></span><span></span><span></span><span></span>';
       parent.appendChild(el);
 
       setInterval((function() {

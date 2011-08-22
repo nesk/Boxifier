@@ -1,0 +1,19 @@
+/*
+  IE fallbacks
+*/
+
+.box_overlay, .boxifier img, .box_viewer, .box_title {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#AA000000,endColorstr=#AA000000);
+}
+
+.box_title {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CC000000,endColorstr=#CC000000);
+}
+
+.box_load span {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4CCCCCCC,endColorstr=#4CCCCCCC);
+}
+
+.highlight {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCCCCCCC,endColorstr=#CCCCCCCC) !important;
+}
