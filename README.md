@@ -6,7 +6,7 @@ A lightweight HTML5 Lightbox using CSS3 animations and supporting old web browse
 
 The project _is currently in development_ ! The goal is to obtain a JS file smaller than 6Ko (and less if possible).
 
-Actually, the main functions are finished, but some parts of the script are bugged so please _be careful_ if you want to use Boxifier! Remember to check this page (https://github.com/Nesk/Boxifier/issues) to know what are the current issues of this project.
+Currently, the main functions are finished, but some parts of the script are bugged so please _be careful_ if you want to use Boxifier! Remember to check this page (https://github.com/Nesk/Boxifier/issues) to know the current issues.
 
 ## Installation and usage
 
@@ -40,4 +40,4 @@ You can also create groups of images :
 </a>
 ```
 
-If you add a title attribute to a link, it will be display with the image.
+If you add a title attribute to a link, it will be displayed at the bottom of the image.
