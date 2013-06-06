@@ -42,7 +42,20 @@
 
     }
   
-  
+    /* 
+     * Patch by Aris S Ripandi
+     * Mail: riespandi@gmail.com
+     * Date: 2013-06/06 20:40
+    */
+    function getDocHeight() {
+        var D = document;
+        return Math.max(
+            Math.max(D.body.scrollHeight, D.documentElement.scrollHeight),
+            Math.max(D.body.offsetHeight, D.documentElement.offsetHeight),
+            Math.max(D.body.clientHeight, D.documentElement.clientHeight)
+        );
+    }
+
   /*** Viewer object ***/
   
   /*
@@ -253,6 +266,16 @@
 
             viewerWidth = Math.floor(viewerWidth);
             viewerHeight = Math.floor(viewerHeight);
+
+            /* 
+             * Patch by Aris S Ripandi
+             * Mail: riespandi@gmail.com
+             * Date: 2013-06/06 20:40
+            */
+            if (viewerHeight > getDocHeight()) {
+              viewerWidth = Math.floor(viewerWidth*0.3);
+              viewerHeight = Math.floor(viewerHeight*0.3);
+            }
 
           // Applying event
             if(Math.floor(parseInt(viewerStyle.width)) != viewerWidth || Math.floor(parseInt(viewerStyle.height)) != viewerHeight) {
