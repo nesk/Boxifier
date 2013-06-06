@@ -6,6 +6,9 @@ The project _is currently in development_ ! The goal is to obtain a JS file smal
 
 Currently, the main functions are finished, but some parts of the script are bugged so please _be careful_ if you want to use Boxifier! Remember to check this page (https://github.com/riespandi/Boxifier/issues) to know the current issues.
 
+See the demo [here](http://arissh.com/collage/)
+
+
 ## Installation and usage
 
 To use this project on a web page, just add those five lines in your `<head>` tag :
@@ -35,4 +38,5 @@ If you add a title attribute to a link, it will be displayed at the bottom of th
 ## Changelog
 
 __06/06/2013__
-- mod: fixed image size, auto resizing when image size > screen size
+- fix: fixed image size, auto resizing when image size > screen size
+- mod: create rounded for viewer
