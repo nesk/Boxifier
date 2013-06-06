@@ -1,6 +1,4 @@
-# Boxifier
-
-## Presentation
+## What is Boxifier?
 
 A lightweight HTML5 Lightbox using CSS3 animations and supporting old web browsers. No jQuery needed.
 
