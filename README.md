@@ -40,3 +40,4 @@ If you add a title attribute to a link, it will be displayed at the bottom of th
 __06/06/2013__
 - fix: fixed image size, auto resizing when image size > screen size
 - mod: create rounded for viewer
+- fix: image_viewer position fixed by set z-index: 999;
