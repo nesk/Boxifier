@@ -1,3 +1,5 @@
+__This project is abandoned!__
+
 # Boxifier
 
 ## Presentation
